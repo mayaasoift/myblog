@@ -5,11 +5,11 @@ import type {
 } from "@/types.ts";
 
 export const SITE: SiteConfiguration = {
-  title: "Barebones",
+  title: "NeonHive",
   description:
-    "A barebones starter theme. Built with Astro, Tailwind CSS, and Markdown.",
+    "my blog page where I try to be a great story teller",
   url: "https://barebones.superwebthemes.com",
-  author: "SuperWeb Themes",
+  author: "MariG",
   locale: "en-US",
 };
 
@@ -30,27 +30,15 @@ export const NAV_LINKS: NavigationLinks = {
     path: "/contact",
     label: "Contact",
   },
-  documentation: {
-    path: "https://docs.superwebthemes.com",
-    label: "Documentation",
-  },
 };
 
 export const SOCIAL_LINKS: SocialLinks = {
   email: {
     label: "Email",
-    url: "mailto:support@superwebthemes.com",
+    url: "marhmpa@gmail.com",
   },
   github: {
     label: "GitHub",
-    url: "https://github.com/superwebthemes",
-  },
-  discord: {
-    label: "Discord",
-    url: "https://discord.gg/V5MCBCsAjJ",
-  },
-  twitter: {
-    label: "Twitter",
-    url: "https://twitter.com/superwebthemes",
+    url: "https://github.com/Mariihmp/MariG",
   },
 };
