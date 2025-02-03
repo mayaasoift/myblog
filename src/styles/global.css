@@ -16,10 +16,13 @@ main, article, section {
 
 @keyframes galaxyBackground {
   0% {
-    background-position: 0 0;
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
   }
   100% {
-    background-position: 100% 100%;
+    background-position: 50% 0%;
   }
 }
 
@@ -42,8 +45,8 @@ main, article, section {
       rgb(var(--dark-mode-background))
     );
     background: url('/stars-bg.jpg') no-repeat center center fixed; 
-    background-size: cover;
+    background-size: 100% auto;
 
-    animation: galaxyBackground 30s infinite linear;
+    animation: galaxyBackground 30s infinite ease-in-out;
   }
 }
