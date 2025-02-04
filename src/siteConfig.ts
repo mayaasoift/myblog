@@ -26,9 +26,9 @@ export const NAV_LINKS: NavigationLinks = {
     path: "/projects",
     label: "Projects",
   },
-  contact: {
-    path: "/contact",
-    label: "Contact",
+  videoEssays: {
+    path: "/videoEssays",
+    label: "video Essays",
   },
 };
 
@@ -40,5 +40,10 @@ export const SOCIAL_LINKS: SocialLinks = {
   github: {
     label: "GitHub",
     url: "https://github.com/Mariihmp/MariG",
+  },
+  linkedin: {
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/company/w3schools.com/",
+    
   },
 };

@@ -1,0 +1,20 @@
+---
+import VideoPlayer from "@/components/VideoPlayer.astro";
+// import BaseLayout from "@/layouts/BaseLayout.astro";
+import SeoPage from "@/components/SeoPage.astro";
+
+const videos = [
+  { title: "The History of Space Travel", videoId: "dQw4w9WgXcQ" },
+  { title: "The Rise of AI", videoId: "3JZ_D3ELwOQ" },
+  { title: "The Future of Art", videoId: "L3wKzyIN1yk" },
+];
+---
+
+    <SeoPage title="Video Essays" />
+  <h1 class="text-3xl font-bold mb-6">Video Essays Collection</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {videos.map(video => (
+      <VideoPlayer title={video.title} videoId={video.videoId} />
+    ))}
+  </div>

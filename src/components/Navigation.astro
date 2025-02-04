@@ -3,8 +3,13 @@ import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@/siteConfig.ts";
 ---
 
 <header class="flex flex-wrap items-center justify-between pb-8">
-  <!-- Title without linky format -->
-  <a href="/" class="text-lg font-semibold sm:text-xl no-underline text-white">{SITE.title}</a>
+  
+  <a href="/" class="text-lg font-semibold sm:text-xl no-underline text-white flex items-center">
+    <img src="/favicon.ico" alt="Logo" class="w-6 h-6 mr-2" />
+    {SITE.title}
+  </a>
+  
+
   
   <nav>
     <ul class="flex list-none items-center gap-2 p-0 sm:gap-3">
