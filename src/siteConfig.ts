@@ -14,10 +14,8 @@ export const SITE: SiteConfiguration = {
 };
 
 export const NAV_LINKS: NavigationLinks = {
-  about: {
-    path: "/about",
-    label: "About",
-  },
+ 
+  
   blog: {
     path: "/blog",
     label: "Blog",
@@ -25,11 +23,14 @@ export const NAV_LINKS: NavigationLinks = {
   projects: {
     path: "/projects",
     label: "Projects",
-  },
-  videoEssays: {
-    path: "/videoEssays",
-    label: "video Essays",
-  },
+  }, 
+  about: {
+    path: "/about",
+    label: "About",}
+  // videoEssays: {
+  //   path: "/videoEssays",
+  //   label: "video Essays",
+  // },
 };
 
 export const SOCIAL_LINKS: SocialLinks = {

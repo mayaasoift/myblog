@@ -13,16 +13,12 @@ In the heart of ancient forests and the depths of untamed wilderness, tales are 
 # My Embedded YouTube Videos
 
 ## Video 1: Introduction to Astro
-https://www.youtube.com/watch?v=5l5N_K1d3mU
-
+https://youtu.be/mL9ztTzrY6Y?si=2aHxU_ACMtSgf7U-
 ## Video 2: Astro + Tailwind CSS Tutorial
-https://www.youtube.com/watch?v=ykzq23s1Wcg
-
+https://youtu.be/mL9ztTzrY6Y?si=2aHxU_ACMtSgf7U-
 ## Video 3: How to Build a Blog with Astro
-https://www.youtube.com/watch?v=wZgRXXap8J4
-
+https://youtu.be/mL9ztTzrY6Y?si=2aHxU_ACMtSgf7U-
 ## Video 4: Deploying Astro on Vercel
-https://www.youtube.com/watch?v=Lz2pJtUjczo
-
+https://youtu.be/mL9ztTzrY6Y?si=2aHxU_ACMtSgf7U-
 ## Video 5: Advanced Astro Features
-https://www.youtube.com/watch?v=1zSx6zcVv2s
+https://www.youtube.com/watch?v=ZfcHwBKcNzY&list=TLPQMDQwMjIwMjVX1KLrN52t_A&index=6

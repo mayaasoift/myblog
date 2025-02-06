@@ -1,12 +1,9 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
+import rehypeRaw from "rehype-raw";
 import customEmbeds from "astro-custom-embeds";
-import svelte from "@astrojs/svelte";
-
-
-import LinkCardEmbed from './src/embeds/link-card/embed'
-import YoutubeEmbed from './src/embeds/youtube/embed'
+import remarkEmbedYouTube from "./src/utils/remark-embed-youtube.js";
 
 
 
@@ -14,12 +11,8 @@ import YoutubeEmbed from './src/embeds/youtube/embed'
 export default defineConfig({
   site: "https://barebones.superwebthemes.com",
   integrations: [tailwind(), sitemap(),customEmbeds()],
+  markdown: {
+    remarkPlugins: [remarkEmbedYouTube],
+    rehypePlugins: [rehypeRaw]
+  },
 });
-
-integrations: [customEmbeds({
-  embeds: [
-    YoutubeEmbed,
-    LinkCardEmbed,
-    
-  ]
-}), mdx(), sitemap(), tailwind(), svelte()]
