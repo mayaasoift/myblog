@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark-bg {
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White text color */
-  padding: 40px 20px; /* Adjust padding as needed */
-  border-radius: 8px; /* Optional: rounded corners */
-}
+
 main, article, section {
   background-color: #000000;
   color: #ffffff;

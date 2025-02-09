@@ -22,6 +22,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
 ---
 
 <BaseLayout>
@@ -41,7 +42,7 @@ const { Content } = await entry.render();
       {formatDate(entry.data.publicationDate)}
     </p>
     <hr class="mb-6 mt-3 opacity-25" />
-    <div class="content prose mx-auto dark:prose-invert">
+    <div class="content  ">
       <Content />
     </div>
   </div>
