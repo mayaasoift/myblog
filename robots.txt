@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://barebones.superwebthemes.com/sitemap-index.xml
