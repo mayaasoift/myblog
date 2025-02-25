@@ -16,3 +16,4 @@ publicationDate: 2024-08-03
 #the mythical man-month fred brooks 
 #working effectively with legacy code //software testing 
 #the wast majority of world lives in sql - orm 
+#Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems
