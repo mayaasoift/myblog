@@ -31,7 +31,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
 
       # For Vercel/Netlify, replace the deploy step above with the appropriate action.
