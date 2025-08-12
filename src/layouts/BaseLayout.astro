@@ -17,11 +17,11 @@ import Navigation from "@/components/Navigation.astro";
   </BaseHead>
   <body>
     <main class="mx-auto min-h-screen max-w-screen-md p-3 font-sans sm:p-6">
-      <Navigation 
-        links={[
-          { href: "/myblog/blog", label: "Blog" },
-          { href: "/myblog/projects", label: "Projects" },
-          { href: "/myblog/about", label: "About" }
+      <Navigation />
+      <slot />
+    </main>
+  </body>
+</html>
         ]}
       />
       <slot />

@@ -14,20 +14,17 @@ export const SITE: SiteConfiguration = {
 };
 
 export const NAV_LINKS: NavigationLinks = {
- 
-  
   blog: {
-    path: "/blog",
+    path: "/myblog/blog",
     label: "Blog",
   },
   projects: {
-    path: "/projects",
+    path: "/myblog/projects",
     label: "Projects",
   }, 
   about: {
-    path: "/about",
+    path: "/myblog/about",
     label: "About",}
-  // videoEssays: {
   //   path: "/videoEssays",
   //   label: "video Essays",
   // },
@@ -46,5 +43,7 @@ export const SOCIAL_LINKS: SocialLinks = {
     label: "LinkedIn",
     url: "https://www.linkedin.com/company/w3schools.com/",
     
+  },
+};
   },
 };
