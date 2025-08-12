@@ -28,7 +28,7 @@ Projects
                    transition-all duration-300 ease-in-out">
 About
 <span class="absolute inset-0 rounded-md border-2 border-transparent 
-                       hover:border-white transition-all"></span> </a> </li> </ul> </nav> </header>   <div> <img src="/myblog/_astro/dream-machine.dBl6UqlY_1REJnP.webp" alt width="880" height="466" loading="lazy" decoding="async" class="h-auto w-full"> <h1 class="mt-3">The Dream Machine</h1> <p> 8/20/2024 </p> <hr class="mb-6 mt-3 opacity-25"> <div class="content  "> <h2 id="the-dream-machine-project-over-view">the dream machine project over view</h2>
+                       hover:border-white transition-all"></span> </a> </li> </ul> </nav> </header>    <div> <img src="/myblog/_astro/dream-machine.dBl6UqlY_1REJnP.webp" alt width="880" height="466" loading="lazy" decoding="async" class="h-auto w-full"> <h1 class="mt-3">The Dream Machine</h1> <p> 8/20/2024 </p> <hr class="mb-6 mt-3 opacity-25"> <div class="content  "> <h2 id="the-dream-machine-project-over-view">the dream machine project over view</h2>
 <h3 id="one-of-the-options-here-is-to-use-perlin-noise--shader-effects--procedural-dream-like-visuals">one of the options here is to use: “Perlin Noise / Shader Effects → Procedural dream-like visuals”</h3>
 <p>converting text to theme with processing the langugage like this image user can write their feeeling and creating this world based on that feeling (maybe user can share more deatile about the dream so we can further recreat that world )  <img alt="alt text" width="898" height="405" loading="lazy" decoding="async" src="/myblog/_astro/image.BKGmwnX0_1H5Myr.webp" ></p>
 <p>import React, { useEffect, useRef, useState } from “react”;
@@ -151,4 +151,130 @@ const mountRef = useRef(null);</p>
 <span class="line"><span>    &#x3C;/div></span></span>
 <span class="line"><span>);</span></span></code></pre>
 <p>};</p>
-<p>export default DreamMachine;</p> </div> </div>  </main> </html>
+<p>export default DreamMachine;</p> </div> </div>  </main>
+]}
+      />
+  <div> <img src="/myblog/_astro/dream-machine.dBl6UqlY_1REJnP.webp" alt width="880" height="466" loading="lazy" decoding="async" class="h-auto w-full"> <h1 class="mt-3">The Dream Machine</h1> <p> 8/20/2024 </p> <hr class="mb-6 mt-3 opacity-25"> <div class="content  "> <h2 id="the-dream-machine-project-over-view">the dream machine project over view</h2>
+<h3 id="one-of-the-options-here-is-to-use-perlin-noise--shader-effects--procedural-dream-like-visuals">one of the options here is to use: “Perlin Noise / Shader Effects → Procedural dream-like visuals”</h3>
+<p>converting text to theme with processing the langugage like this image user can write their feeeling and creating this world based on that feeling (maybe user can share more deatile about the dream so we can further recreat that world )  <img alt="alt text" width="898" height="405" loading="lazy" decoding="async" src="/myblog/_astro/image.BKGmwnX0_1H5Myr.webp" ></p>
+<p>import React, { useEffect, useRef, useState } from “react”;
+import * as THREE from “three”;</p>
+<p>const DreamMachine = () => {
+const [sceneType, setSceneType] = useState("");
+const mountRef = useRef(null);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>const handleSceneChange = (e: React.ChangeEvent&#x3C;HTMLSelectElement>) => {</span></span>
+<span class="line"><span>    setSceneType(e.target.value);</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>useEffect(() => {</span></span>
+<span class="line"><span>    if (!mountRef.current) return;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const scene = new THREE.Scene();</span></span>
+<span class="line"><span>    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);</span></span>
+<span class="line"><span>    const renderer = new THREE.WebGLRenderer({ antialias: true });</span></span>
+<span class="line"><span>    renderer.setSize(window.innerWidth, window.innerHeight);</span></span>
+<span class="line"><span>    mountRef.current.appendChild(renderer.domElement);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let animationFrameId: number;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const renderScene = () => {</span></span>
+<span class="line"><span>        switch (sceneType) {</span></span>
+<span class="line"><span>            case "zen":</span></span>
+<span class="line"><span>                // Zen Garden Setup</span></span>
+<span class="line"><span>                const zenGeometry = new THREE.BoxGeometry();</span></span>
+<span class="line"><span>                const zenMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });</span></span>
+<span class="line"><span>                const zenCube = new THREE.Mesh(zenGeometry, zenMaterial);</span></span>
+<span class="line"><span>                scene.add(zenCube);</span></span>
+<span class="line"><span>                camera.position.z = 5;</span></span>
+<span class="line"><span>                const zenAnimate = () => {</span></span>
+<span class="line"><span>                    requestAnimationFrame(zenAnimate);</span></span>
+<span class="line"><span>                    zenCube.rotation.x += 0.01;</span></span>
+<span class="line"><span>                    zenCube.rotation.y += 0.01;</span></span>
+<span class="line"><span>                    renderer.render(scene, camera);</span></span>
+<span class="line"><span>                };</span></span>
+<span class="line"><span>                zenAnimate();</span></span>
+<span class="line"><span>                break;</span></span>
+<span class="line"><span>            case "chaos":</span></span>
+<span class="line"><span>                // Chaotic Storm Setup</span></span>
+<span class="line"><span>                const chaosGeometry = new THREE.SphereGeometry(1, 32, 32);</span></span>
+<span class="line"><span>                const chaosMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000, wireframe: true });</span></span>
+<span class="line"><span>                const chaosSphere = new THREE.Mesh(chaosGeometry, chaosMaterial);</span></span>
+<span class="line"><span>                scene.add(chaosSphere);</span></span>
+<span class="line"><span>                camera.position.z = 5;</span></span>
+<span class="line"><span>                const chaosLight = new THREE.PointLight(0xffffff, 1, 100);</span></span>
+<span class="line"><span>                chaosLight.position.set(10, 10, 10);</span></span>
+<span class="line"><span>                scene.add(chaosLight);</span></span>
+<span class="line"><span>                const chaosAnimate = () => {</span></span>
+<span class="line"><span>                    requestAnimationFrame(chaosAnimate);</span></span>
+<span class="line"><span>                    chaosSphere.rotation.x += 0.02;</span></span>
+<span class="line"><span>                    chaosSphere.rotation.y += 0.03;</span></span>
+<span class="line"><span>                    renderer.render(scene, camera);</span></span>
+<span class="line"><span>                };</span></span>
+<span class="line"><span>                chaosAnimate();</span></span>
+<span class="line"><span>                break;</span></span>
+<span class="line"><span>            case "cyber":</span></span>
+<span class="line"><span>                // Cyber City Setup</span></span>
+<span class="line"><span>                const cyberGeometry = new THREE.CylinderGeometry(0.5, 0.5, 2, 32);</span></span>
+<span class="line"><span>                const cyberMaterial = new THREE.MeshPhongMaterial({ color: 0x00ffff, emissive: 0x00ffff });</span></span>
+<span class="line"><span>                const cyberCylinder = new THREE.Mesh(cyberGeometry, cyberMaterial);</span></span>
+<span class="line"><span>                scene.add(cyberCylinder);</span></span>
+<span class="line"><span>                camera.position.z = 5;</span></span>
+<span class="line"><span>                const cyberLight = new THREE.DirectionalLight(0xffffff, 0.8);</span></span>
+<span class="line"><span>                cyberLight.position.set(5, 10, 7);</span></span>
+<span class="line"><span>                scene.add(cyberLight);</span></span>
+<span class="line"><span>                const cyberAnimate = () => {</span></span>
+<span class="line"><span>                    requestAnimationFrame(cyberAnimate);</span></span>
+<span class="line"><span>                    cyberCylinder.rotation.x += 0.01;</span></span>
+<span class="line"><span>                    cyberCylinder.rotation.y += 0.02;</span></span>
+<span class="line"><span>                    renderer.render(scene, camera);</span></span>
+<span class="line"><span>                };</span></span>
+<span class="line"><span>                cyberAnimate();</span></span>
+<span class="line"><span>                break;</span></span>
+<span class="line"><span>            case "myth":</span></span>
+<span class="line"><span>                // Mythical Dragon Setup</span></span>
+<span class="line"><span>                const mythGeometry = new THREE.TorusKnotGeometry(1, 0.4, 100, 16);</span></span>
+<span class="line"><span>                const mythMaterial = new THREE.MeshToonMaterial({ color: 0xffd700 });</span></span>
+<span class="line"><span>                const mythTorus = new THREE.Mesh(mythGeometry, mythMaterial);</span></span>
+<span class="line"><span>                scene.add(mythTorus);</span></span>
+<span class="line"><span>                camera.position.z = 5;</span></span>
+<span class="line"><span>                const mythLight = new THREE.AmbientLight(0xffffff, 0.5);</span></span>
+<span class="line"><span>                scene.add(mythLight);</span></span>
+<span class="line"><span>                const mythAnimate = () => {</span></span>
+<span class="line"><span>                    requestAnimationFrame(mythAnimate);</span></span>
+<span class="line"><span>                    mythTorus.rotation.x += 0.01;</span></span>
+<span class="line"><span>                    mythTorus.rotation.y += 0.01;</span></span>
+<span class="line"><span>                    renderer.render(scene, camera);</span></span>
+<span class="line"><span>                };</span></span>
+<span class="line"><span>                mythAnimate();</span></span>
+<span class="line"><span>                break;</span></span>
+<span class="line"><span>            default:</span></span>
+<span class="line"><span>                break;</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    renderScene();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return () => {</span></span>
+<span class="line"><span>        if (animationFrameId) cancelAnimationFrame(animationFrameId);</span></span>
+<span class="line"><span>        mountRef.current.removeChild(renderer.domElement);</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span>}, [sceneType]);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>    &#x3C;div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4"></span></span>
+<span class="line"><span>        &#x3C;h1 className="text-3xl font-bold mb-6">Dream Machine&#x3C;/h1></span></span>
+<span class="line"><span>        &#x3C;p className="text-lg text-gray-300 mb-8">Choose a dream scene from the dropdown!&#x3C;/p></span></span>
+<span class="line"><span>        &#x3C;div className="w-full max-w-md mb-12"></span></span>
+<span class="line"><span>            &#x3C;select value={sceneType} onChange={handleSceneChange} className="w-full px-4 py-2 rounded-md border border-gray-700 bg-gray-800 text-white focus:outline-none focus:border-blue-500 transition"></span></span>
+<span class="line"><span>                &#x3C;option value="">Select a Dream Scene&#x3C;/option></span></span>
+<span class="line"><span>                &#x3C;option value="zen">Peaceful Zen Garden&#x3C;/option></span></span>
+<span class="line"><span>                &#x3C;option value="chaos">Chaotic Storm&#x3C;/option></span></span>
+<span class="line"><span>                &#x3C;option value="cyber">Cyber City&#x3C;/option></span></span>
+<span class="line"><span>                &#x3C;option value="myth">Mythical Dragon&#x3C;/option></span></span>
+<span class="line"><span>            &#x3C;/select></span></span>
+<span class="line"><span>        &#x3C;/div></span></span>
+<span class="line"><span>        &#x3C;div ref={mountRef} className="w-full max-w-4xl h-[400px] mt-12" /></span></span>
+<span class="line"><span>    &#x3C;/div></span></span>
+<span class="line"><span>);</span></span></code></pre>
+<p>};</p>
+<p>export default DreamMachine;</p> </div> </div>  </html>
