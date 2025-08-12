@@ -45,5 +45,4 @@ export const SOCIAL_LINKS: SocialLinks = {
     
   },
 };
-  },
-};
+  

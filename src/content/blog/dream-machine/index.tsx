@@ -34,15 +34,18 @@ const DreamMachine = () => {
 
         // Helper to clear scene objects and dispose geometries/materials
         function clearScene() {
-            scene.traverse((object) => {
-                if ((object as THREE.Mesh).geometry) {
-                    (object as THREE.Mesh).geometry.dispose?.();
+            scene.traverse((object: THREE.Object3D) => {
+                // Only dispose if geometry/material exist and have dispose method
+                if ("geometry" in object && (object as any).geometry && typeof (object as any).geometry.dispose === "function") {
+                    (object as any).geometry.dispose();
                 }
-                if ((object as THREE.Mesh).material) {
-                    if (Array.isArray((object as THREE.Mesh).material)) {
-                        (object as THREE.Mesh).material.forEach((mat) => mat.dispose?.());
-                    } else {
-                        (object as THREE.Mesh).material.dispose?.();
+                if ("material" in object && (object as any).material) {
+                    if (Array.isArray((object as any).material)) {
+                        (object as any).material.forEach((mat: any) => {
+                            if (mat && typeof mat.dispose === "function") mat.dispose();
+                        });
+                    } else if (typeof (object as any).material.dispose === "function") {
+                        (object as any).material.dispose();
                     }
                 }
             });
